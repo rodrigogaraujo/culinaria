@@ -31,14 +31,18 @@ public class CookingAppWidget extends AppWidgetProvider {
     public void onReceive(Context context, Intent intent) {
         if(Constants.ACTION_SHOW_RECIPES.equals(intent.getAction())){
             Bundle bundle = intent.getExtras();
-            if(bundle.getParcelableArrayList(Constants.SEND_INGREDIENTS) != null) {
-                mIngredients = intent.getExtras().getParcelableArrayList(Constants.SEND_INGREDIENTS);
+
+            if (bundle.getParcelableArrayList(Constants.SEND_INGREDIENTS) != null) {
+                mIngredients = bundle.getParcelableArrayList(Constants.SEND_INGREDIENTS);
                 AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
                 ComponentName thisWidget = new ComponentName(context, CookingAppWidget.class);
-                RemoteViews views =  new RemoteViews(context.getPackageName(), R.layout.cooking_app_widget);
-                    views.setRemoteAdapter(R.id.widget_list, intent);
-                //onUpdate(context, appWidgetManager, appWidgetIds);
-                appWidgetManager.updateAppWidget(thisWidget, views);
+                int[] appWidgetIds = appWidgetManager.getAppWidgetIds(thisWidget);
+                try {
+                    onUpdate(context, appWidgetManager, appWidgetIds);
+                } catch (Exception e) {
+                    //TODO Add log here
+                    e.printStackTrace();
+                }
             }
         }
         super.onReceive(context, intent);
