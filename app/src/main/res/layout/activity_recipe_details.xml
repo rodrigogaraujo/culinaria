@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fragment android:name="net.g3infotech.culinaria.fragment.DetailsRecipeFragment"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/steps_fragment"
+    xmlns:android="http://schemas.android.com/apk/res/android" />

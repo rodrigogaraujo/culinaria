@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/two_pane_linear"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <fragment android:name="net.g3infotech.culinaria.fragment.DetailsRecipeFragment"
+        android:layout_width="180dp"
+        android:layout_height="match_parent"
+        android:id="@+id/steps_fragment"
+        xmlns:android="http://schemas.android.com/apk/res/android" />
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark" />
+
+    <FrameLayout
+        android:id="@+id/detail_container"
+        android:layout_width="400dp"
+        android:layout_height="match_parent"
+        android:scaleType="centerInside"/>
+
+</LinearLayout>
