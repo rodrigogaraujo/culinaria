@@ -7,12 +7,11 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.widget.RemoteViews;
 
 import net.g3infotech.culinaria.entitie.Ingredient;
+import net.g3infotech.culinaria.preferences.CookingPreferences;
 import net.g3infotech.culinaria.service.WidgetService;
 import net.g3infotech.culinaria.utils.Constants;
 
@@ -26,18 +25,21 @@ import java.util.List;
 public class CookingAppWidget extends AppWidgetProvider {
 
     private List<Ingredient> mIngredients = new ArrayList<>();
-
+    private CookingPreferences mCookingPreferences;
     @Override
     public void onReceive(Context context, Intent intent) {
+        mCookingPreferences = new CookingPreferences(context);
         if(Constants.ACTION_SHOW_RECIPES.equals(intent.getAction())){
             Bundle bundle = intent.getExtras();
-
             if (bundle.getParcelableArrayList(Constants.SEND_INGREDIENTS) != null) {
                 mIngredients = bundle.getParcelableArrayList(Constants.SEND_INGREDIENTS);
+                mCookingPreferences.clearPreferences();
+                mCookingPreferences.addListIngredients(mIngredients);
                 AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
                 ComponentName thisWidget = new ComponentName(context, CookingAppWidget.class);
                 int[] appWidgetIds = appWidgetManager.getAppWidgetIds(thisWidget);
                 try {
+                    appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds, R.id.widget_list);
                     onUpdate(context, appWidgetManager, appWidgetIds);
                 } catch (Exception e) {
                     //TODO Add log here
@@ -54,13 +56,7 @@ public class CookingAppWidget extends AppWidgetProvider {
             RemoteViews views =  new RemoteViews(context.getPackageName(), R.layout.cooking_app_widget);
             Intent widget = new Intent(context, WidgetService.class);
 
-            Bundle bundle = new Bundle();
-            bundle.putParcelableArrayList(Constants.SEND_INGREDIENTS, (ArrayList<? extends Parcelable>) mIngredients);
-            widget.putExtras(bundle);
-            widget.setData(Uri.parse(widget.toUri(Intent.URI_INTENT_SCHEME)));
-
             views.setRemoteAdapter(R.id.widget_list, widget);
-
             appWidgetManager.updateAppWidget(appWidgetId, views);
         }
         super.onUpdate(context, appWidgetManager, appWidgetIds);

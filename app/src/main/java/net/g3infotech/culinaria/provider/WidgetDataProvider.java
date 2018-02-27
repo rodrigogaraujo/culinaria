@@ -9,6 +9,7 @@ import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
 
 import net.g3infotech.culinaria.entitie.Ingredient;
+import net.g3infotech.culinaria.preferences.CookingPreferences;
 import net.g3infotech.culinaria.utils.Constants;
 
 import java.util.ArrayList;
@@ -19,12 +20,14 @@ import java.util.List;
  */
 
 public class WidgetDataProvider implements RemoteViewsService.RemoteViewsFactory{
-    List<Ingredient> mIngredients;
+    List<Ingredient> mIngredients = new ArrayList<>();
     Context mContext;
     Intent mIntent;
+    CookingPreferences mCookingPreferences;
     public WidgetDataProvider(Context context, Intent intent) {
         mContext = context;
         mIntent = intent;
+        mCookingPreferences = new CookingPreferences(context);
     }
 
     @Override
@@ -33,10 +36,8 @@ public class WidgetDataProvider implements RemoteViewsService.RemoteViewsFactory
     }
 
     private void getData() {
-        mIngredients =  new ArrayList<>();
-        if(mIntent.hasExtra(Constants.SEND_INGREDIENTS)) {
-            mIngredients = mIntent.getExtras().getParcelableArrayList(Constants.SEND_INGREDIENTS);
-        }
+        if(mCookingPreferences.getListIngredients() != null)
+            mIngredients = mCookingPreferences.getListIngredients();
     }
 
     @Override
@@ -47,6 +48,7 @@ public class WidgetDataProvider implements RemoteViewsService.RemoteViewsFactory
     @Override
     public void onDestroy() {
         mIngredients = new ArrayList<>();
+        mCookingPreferences.clearPreferences();
     }
 
     @Override
