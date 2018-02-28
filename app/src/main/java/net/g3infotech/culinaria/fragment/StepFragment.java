@@ -88,6 +88,27 @@ public class StepFragment extends ListFragment {
     }
 
     @Override
+    public void onPause() {
+        super.onPause();
+        pausePlayer();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        startPlayer();
+    }
+
+    private void pausePlayer(){
+        mExoPlayer.setPlayWhenReady(false);
+        mExoPlayer.getPlaybackState();
+    }
+    private void startPlayer(){
+        mExoPlayer.setPlayWhenReady(true);
+        mExoPlayer.getPlaybackState();
+    }
+
+    @Override
     public void onDestroy() {
         super.onDestroy();
     }
