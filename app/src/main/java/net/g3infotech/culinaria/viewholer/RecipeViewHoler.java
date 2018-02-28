@@ -50,6 +50,7 @@ public class RecipeViewHoler extends RecyclerView.ViewHolder implements View.OnC
         Intent intent = new Intent(mContext, DetailsRecipeActivity.class);
         Bundle bundle = new Bundle();
         bundle.putParcelableArrayList(Constants.SEND_RECIPE, (ArrayList<? extends Parcelable>) mRecipe.getSteps());
+        bundle.putParcelableArrayList(Constants.SEND_INGREDIENTS, (ArrayList<? extends Parcelable>) mRecipe.getIngredients());
         intent.putExtras(bundle);
 
         Intent intentWidget = new Intent(mContext, CookingAppWidget.class);

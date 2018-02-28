@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
+import android.view.View;
 
 import net.g3infotech.culinaria.entitie.Step;
 import net.g3infotech.culinaria.fragment.StepFragment;
@@ -52,5 +54,15 @@ public class DetailsRecipeActivity extends AppCompatActivity implements OnStepCl
                     .replace(R.id.detail_container, fragment)
                     .commit();
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:
+                finish();
+                break;
+        }
+        return true;
     }
 }
