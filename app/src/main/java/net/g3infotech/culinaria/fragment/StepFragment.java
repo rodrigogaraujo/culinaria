@@ -57,7 +57,6 @@ public class StepFragment extends ListFragment {
     }
 
     public static StepFragment newInstance(Step step) {
-        
         Bundle args = new Bundle();
         args.putParcelable(Constants.SEND_STEP, step);
         StepFragment fragment = new StepFragment();
@@ -86,6 +85,11 @@ public class StepFragment extends ListFragment {
         }
         // Inflate the layout for this fragment
         return view;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
     }
 
     @Override

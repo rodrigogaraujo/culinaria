@@ -14,25 +14,25 @@
 
     <Button
         android:id="@+id/bt_next"
-        android:layout_width="136dp"
+        android:layout_width="@dimen/cento_trinta_seis_dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginStart="8dp"
-        android:text="Proximo"
+        android:layout_marginBottom="@dimen/oito_dp"
+        android:layout_marginStart="@dimen/oito_dp"
+        android:text="@string/proximo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="8dp" />
+        android:layout_marginLeft="@dimen/oito_dp" />
 
     <Button
         android:id="@+id/bt_prev"
-        android:layout_width="136dp"
+        android:layout_width="@dimen/cento_trinta_seis_dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="Anterior"
+        android:layout_marginBottom="@dimen/oito_dp"
+        android:layout_marginEnd="@dimen/oito_dp"
+        android:text="@string/anterior"
         app:layout_constraintBottom_toBottomOf="@+id/steps_pager"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginRight="8dp" />
+        android:layout_marginRight="@dimen/oito_dp" />
 
 
 </android.support.constraint.ConstraintLayout>

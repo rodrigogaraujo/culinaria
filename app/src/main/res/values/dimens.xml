@@ -6,4 +6,14 @@ Refer to App Widget Documentation for margin information
 http://developer.android.com/guide/topics/appwidgets/index.html#CreatingLayout
     -->
     <dimen name="widget_margin">8dp</dimen>
+    <dimen name="um_dp">1dp</dimen>
+    <dimen name="quatrocentos_dp">400dp</dimen>
+    <dimen name="cento_trinta_seis_dp">136dp</dimen>
+    <dimen name="oito_dp">8dp</dimen>
+    <dimen name="duzentos_nove_oito_dp">298dp</dimen>
+    <dimen name="dezeseis_dp">16dp</dimen>
+    <dimen name="zero_dp">0dp</dimen>
+    <dimen name="dezoito_sp">18sp</dimen>
+    <dimen name="vinte_quatro_dp">24dp</dimen>
+    <dimen name="trinta_quatro_sp">34sp</dimen>
 </resources>

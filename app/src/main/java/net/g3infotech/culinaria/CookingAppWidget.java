@@ -1,6 +1,5 @@
 package net.g3infotech.culinaria;
 
-import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.ComponentName;
@@ -11,7 +10,7 @@ import android.os.Bundle;
 import android.widget.RemoteViews;
 
 import net.g3infotech.culinaria.entitie.Ingredient;
-import net.g3infotech.culinaria.preferences.CookingPreferences;
+import net.g3infotech.culinaria.provider.preferences.CookingPreferences;
 import net.g3infotech.culinaria.service.WidgetService;
 import net.g3infotech.culinaria.utils.Constants;
 

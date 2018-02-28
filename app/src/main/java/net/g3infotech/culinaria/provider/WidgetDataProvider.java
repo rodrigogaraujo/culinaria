@@ -1,16 +1,12 @@
 package net.g3infotech.culinaria.provider;
 
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.content.ServiceConnection;
-import android.os.IBinder;
 import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
 
 import net.g3infotech.culinaria.entitie.Ingredient;
-import net.g3infotech.culinaria.preferences.CookingPreferences;
-import net.g3infotech.culinaria.utils.Constants;
+import net.g3infotech.culinaria.provider.preferences.CookingPreferences;
 
 import java.util.ArrayList;
 import java.util.List;

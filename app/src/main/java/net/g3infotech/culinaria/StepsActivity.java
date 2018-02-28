@@ -52,10 +52,8 @@ public class StepsActivity extends AppCompatActivity implements View.OnClickList
         int id = v.getId();
         if (id == mBtnNext.getId()) {
             mViewPager.setCurrentItem(mViewPager.getCurrentItem() + 1, true);
-            Log.d("aqui", "passou nessa bct");
         } else if (id == mBtnPrev.getId()) {
             mViewPager.setCurrentItem(mViewPager.getCurrentItem() - 1, true);
-            Log.d("aqui", "passou nessa bct 1");
         }
     }
 }

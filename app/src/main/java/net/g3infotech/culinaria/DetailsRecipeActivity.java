@@ -4,19 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 
-import net.g3infotech.culinaria.adapter.StepAdapter;
 import net.g3infotech.culinaria.entitie.Step;
-import net.g3infotech.culinaria.fragment.DetailsRecipeFragment;
-import net.g3infotech.culinaria.fragment.RecipeFragment;
 import net.g3infotech.culinaria.fragment.StepFragment;
 import net.g3infotech.culinaria.listener.OnStepClickListener;
 import net.g3infotech.culinaria.utils.Constants;
-
-import java.util.List;
 
 public class DetailsRecipeActivity extends AppCompatActivity implements OnStepClickListener{
 
