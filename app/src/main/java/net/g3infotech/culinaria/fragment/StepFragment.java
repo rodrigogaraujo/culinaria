@@ -100,12 +100,16 @@ public class StepFragment extends ListFragment {
     }
 
     private void pausePlayer(){
-        mExoPlayer.setPlayWhenReady(false);
-        mExoPlayer.getPlaybackState();
+        if(mExoPlayer != null) {
+            mExoPlayer.setPlayWhenReady(false);
+            mExoPlayer.getPlaybackState();
+        }
     }
     private void startPlayer(){
-        mExoPlayer.setPlayWhenReady(true);
-        mExoPlayer.getPlaybackState();
+        if(mExoPlayer != null) {
+            mExoPlayer.setPlayWhenReady(true);
+            mExoPlayer.getPlaybackState();
+        }
     }
 
     @Override
