@@ -6,7 +6,6 @@ Application developed in udacity Android Developer Course. Adaptable application
 - Build Tools 23+
 - Target SDK: API Level 26
 - git clone https://github.com/rodrigogaraujo/culinaria.git
-- Insert your API key in "gradle.properties"
 
 # Libraries & Features
 - RecyclerView
