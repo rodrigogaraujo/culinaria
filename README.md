@@ -14,9 +14,9 @@ Application developed in udacity Android Developer Course. Adaptable application
 - ExoPlayer
 
 # Preview
-<img src="https://github.com/rodrigogaraujo/filmesfamosos/blob/master/Screenshot_2018-05-12-16-20-47.png" width="350"/>
-<img src="https://github.com/rodrigogaraujo/filmesfamosos/blob/master/Screenshot_2018-05-12-16-21-10.png" width="350"/>
-<img src="https://github.com/rodrigogaraujo/filmesfamosos/blob/master/Screenshot_2018-05-12-16-21-22.png" width="350"/>
+<img src="https://github.com/rodrigogaraujo/culinaria/blob/master/Screenshot_2018-05-12-16-21-10.png" width="350"/>
+<img src="https://github.com/rodrigogaraujo/culinaria/blob/master/Screenshot_2018-05-12-16-21-22.png" width="350"/>
+<img src="https://github.com/rodrigogaraujo/culinaria/blob/master/Screenshot_2018-05-12-16-20-47.png" width="350"/>
 
 # Contact
 rodrigoaraujo990@gmail.com
